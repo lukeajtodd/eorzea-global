@@ -1,5 +1,16 @@
 # Usage
 
+## Protoc
+
+### Building
+
+Replace service with the service we want to build in.
+
+```bash
+protoc --proto_path=. --go_out=. --micro_out=. \
+		<service>/proto/consignment/consignment.proto
+```
+
 ## Docker
 
 ### Building
