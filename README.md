@@ -1,4 +1,4 @@
-# Eorzea Gloabl
+# Eorzea Global
 
 ![Eorzea World Map](./eorzea.jpg)
 
