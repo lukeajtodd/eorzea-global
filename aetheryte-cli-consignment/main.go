@@ -7,7 +7,7 @@ import (
 	"log"
 	"os"
 
-	pb "github.com/lukeajtodd/aetheryte-service-consignment/proto/consignment"
+	pb "github.com/lukeajtodd/eorzea-global/aetheryte-service-consignment/proto/consignment"
 	micro "go-micro.dev/v4"
 )
 

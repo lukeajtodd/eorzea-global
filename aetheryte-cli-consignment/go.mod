@@ -1,9 +1,8 @@
-module github.com/lukeajtodd/aetheryte-cli-consignment
+module github.com/lukeajtodd/eorzea-global/aetheryte-cli-consignment
 
 go 1.17
 
 require (
-	github.com/lukeajtodd/aetheryte-service-consignment v0.0.0-00010101000000-000000000000
 	go-micro.dev/v4 v4.6.0
 )
 
@@ -45,5 +44,3 @@ require (
 	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 )
-
-replace github.com/lukeajtodd/aetheryte-service-consignment => ../aetheryte-service-consignment
