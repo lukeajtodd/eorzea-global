@@ -8,7 +8,7 @@ import (
 	"os"
 
 	pb "github.com/lukeajtodd/aetheryte-service-consignment/proto/consignment"
-	"google.golang.org/grpc"
+	micro "go-micro.dev/v4"
 )
 
 const (
@@ -28,12 +28,10 @@ func parseFile(file string) (*pb.Consignment, error) {
 }
 
 func main() {
-	conn, err := grpc.Dial(address, grpc.WithInsecure())
-	if err != nil {
-		log.Fatalf("Did not connect: %v", err)
-	}
-	defer conn.Close()
-	client := pb.NewShippingServiceClient(conn)
+	service := micro.NewService(micro.Name("aetheryte.consignment.cli"))
+	service.Init()
+
+	client := pb.NewShippingService("aetheryte.consignment.service", service.Client())
 
 	file := defaultFilename
 	if len(os.Args) > 1 {

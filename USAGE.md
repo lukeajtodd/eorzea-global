@@ -8,7 +8,7 @@ Replace service with the service we want to build in.
 
 ```bash
 protoc --proto_path=. --go_out=. --micro_out=. \
-		<service>/proto/consignment/consignment.proto
+		<service-name>/proto/consignment/consignment.proto
 ```
 
 ## Docker
@@ -16,13 +16,20 @@ protoc --proto_path=. --go_out=. --micro_out=. \
 ### Building
 
 ```bash
-docker build -t shippy-service-consignment .
+docker build -t <service-name> .
 ```
 
-### Running
+### Running (Port & env required)
 
 ```bash
 docker run -p 50051:50051 --env-file ./<service-directory>/.env <service-name>
 ```
 
-This can go through a differnet local port if we want it too. Changing `50051:50051` to `8080:50051` would open it on `8080` locally.
+This can go through a different local port if we want it too. Changing `50051:50051` to `8080:50051` would open it on `8080` locally.
+The .env file port would need updating alongside the trailing port.
+
+### Running (CLI)
+
+```bash
+docker run <service-name>
+```
