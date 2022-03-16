@@ -1,4 +1,4 @@
-module github.com/lukeajtodd/eorze-global/aetheryte-service-consignment
+module github.com/lukeajtodd/eorzea-global/aetheryte-service-consignment
 
 go 1.17
 

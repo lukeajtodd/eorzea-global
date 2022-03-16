@@ -4,7 +4,7 @@ import (
 	"context"
 	"log"
 
-	pb "github.com/lukeajtodd/aetheryte-service-consignment/proto/consignment"
+	pb "github.com/lukeajtodd/eorzea-global/aetheryte-service-consignment/proto/consignment"
 	"go-micro.dev/v4"
 )
 
