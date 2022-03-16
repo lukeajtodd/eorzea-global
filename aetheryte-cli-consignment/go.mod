@@ -3,7 +3,7 @@ module github.com/lukeajtodd/eorzea-global/aetheryte-cli-consignment
 go 1.17
 
 require (
-	github.com/lukeajtodd/eorzea-global/aetheryte-service-consignment v0.1.0
+	github.com/lukeajtodd/eorzea-global/aetheryte-service-consignment v0.1.2
 	go-micro.dev/v4 v4.6.0
 )
 
