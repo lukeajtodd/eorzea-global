@@ -66,7 +66,7 @@ func main() {
 
 	// Create the service
 	service := micro.NewService(
-		micro.Name("aetheryte.service.consignment"),
+		micro.Name("aetheryte.consignment.service"),
 	)
 
 	// Initialise
