@@ -1,8 +1,7 @@
 {
   "description": "This is a test",
-  "weight": 550,
+  "weight": 6000,
   "containers": [
     { "customerId": "c0", "userId": "u0", "origin": "Gridania, Vana'diel" }
-  ],
-  "vesselId": "v0"
+  ]
 }
