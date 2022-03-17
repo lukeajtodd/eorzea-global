@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package vessel;
+
+service VesselService {
+  rpc FindAvailable(Specification) returns (Response) {}
+}
+
+message Vessel {
+  string id = 1;
+  int32 capacity = 2;
+  int32 maxWeight = 3;
+  string name = 4;
+  bool available = 5;
+  string ownerId = 6;
+}
+
+message Specification {
+  int32 capacity = 1;
+  int32 maxWeight = 2;
+}
+
+message Response {
+  Vessel vessel = 1;
+  repeated Vessel vessels = 2;
+}
