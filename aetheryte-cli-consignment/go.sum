@@ -326,8 +326,9 @@ github.com/liquidweb/go-lwApi v0.0.0-20190605172801-52a4864d2738/go.mod h1:0sYF9
 github.com/liquidweb/go-lwApi v0.0.5/go.mod h1:0sYF9rMXb0vlG+4SzdiGMXHheCZxjguMq+Zb4S2BfBs=
 github.com/liquidweb/liquidweb-cli v0.6.9/go.mod h1:cE1uvQ+x24NGUL75D0QagOFCG8Wdvmwu8aL9TLmA/eQ=
 github.com/liquidweb/liquidweb-go v1.6.3/go.mod h1:SuXXp+thr28LnjEw18AYtWwIbWMHSUiajPQs8T9c/Rc=
-github.com/lukeajtodd/eorzea-global/aetheryte-service-consignment v0.1.3 h1:/w+Gcj61URrWWc59AHXYjhKkRfuZKzQq3ahTIEYv9gA=
-github.com/lukeajtodd/eorzea-global/aetheryte-service-consignment v0.1.3/go.mod h1:nYvy6KDFonMBGgAlmBA8NMbPuIBNvxWG5SQEQEouxNI=
+github.com/lukeajtodd/eorzea-global/aetheryte-service-consignment v0.1.4 h1:lraaMt3ThJjUGlumWcw+ckSijwYZNVILpGKMa8QZTbo=
+github.com/lukeajtodd/eorzea-global/aetheryte-service-consignment v0.1.4/go.mod h1:ma8mPQv4G7o+x8mBPc7g6zNw+s3LYzyRlzf9Xs/0L5k=
+github.com/lukeajtodd/eorzea-global/aetheryte-service-vessel v0.1.0/go.mod h1:GgzDK1wURukNxZViP8myMN5RdXsDEhy+EZbk8Yefx20=
 github.com/magiconair/properties v1.8.1/go.mod h1:PppfXfuXeibc/6YijjN8zIbojt8czPbwD3XqdrwzmxQ=
 github.com/magiconair/properties v1.8.4/go.mod h1:y3VJvCyxH9uVvJTWEGAELF3aiYNyPKd5NZ3oSwXrF60=
 github.com/matryer/is v1.2.0 h1:92UTHpy8CDwaJ08GqLDzhhuixiBUUD1p3AU6PHddz4A=

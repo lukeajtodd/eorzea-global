@@ -3,7 +3,7 @@ module github.com/lukeajtodd/eorzea-global/aetheryte-cli-consignment
 go 1.17
 
 require (
-	github.com/lukeajtodd/eorzea-global/aetheryte-service-consignment v0.1.3
+	github.com/lukeajtodd/eorzea-global/aetheryte-service-consignment v0.1.4
 	go-micro.dev/v4 v4.6.0
 )
 
@@ -19,6 +19,7 @@ require (
 	github.com/go-git/go-billy/v5 v5.3.1 // indirect
 	github.com/go-git/go-git/v5 v5.4.2 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
+	github.com/google/go-cmp v0.5.6 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/imdario/mergo v0.3.12 // indirect
 	github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 // indirect
