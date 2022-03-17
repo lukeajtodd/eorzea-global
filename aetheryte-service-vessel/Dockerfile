@@ -21,4 +21,4 @@ RUN mkdir /app
 WORKDIR /app
 COPY --from=builder /app/aetheryte-service-vessel .
 
-CMD ["./aetheryte-service-consignment"]
+CMD ["./aetheryte-service-vessel"]
