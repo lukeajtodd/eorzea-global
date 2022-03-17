@@ -2,9 +2,11 @@ package main
 
 import (
 	"context"
+	"errors"
 	"log"
 
 	pb "github.com/lukeajtodd/eorzea-global/aetheryte-service-consignment/proto/consignment"
+	vessel "github.com/lukeajtodd/eorzea-global/aetheryte-service-vessel/proto/vessel"
 	"go-micro.dev/v4"
 )
 
@@ -37,13 +39,29 @@ func (repo *Repository) GetAll() []*pb.Consignment {
  * We currently only have a create method in the repo as can be seen on the interface above.
  */
 type consignmentService struct {
-	repo repository
+	repo         repository
+	vesselClient vessel.VesselService
 }
 
 // 4. The actual end point for creating a consignment from the outside
 // This is the only method defined on the surface of our service.
 // Creating a consginment
 func (s *consignmentService) CreateConsignment(ctx context.Context, req *pb.Consignment, res *pb.Response) error {
+	vesselRes, err := s.vesselClient.FindAvailable(ctx, &vessel.Specification{
+		MaxWeight: req.Weight,
+		Capacity:  int32(len(req.Containers)),
+	})
+
+	if vesselRes == nil {
+		return errors.New("error fetching vessel")
+	}
+
+	if err != nil {
+		return err
+	}
+
+	req.VesselId = vesselRes.Vessel.Id
+
 	consignment, err := s.repo.Create(req)
 	if err != nil {
 		return err
@@ -72,7 +90,9 @@ func main() {
 	// Initialise
 	service.Init()
 
-	if err := pb.RegisterShippingServiceHandler(service.Server(), &consignmentService{repo}); err != nil {
+	vesselClient := vessel.NewVesselService("aetheryte.vessel.service", service.Client())
+
+	if err := pb.RegisterShippingServiceHandler(service.Server(), &consignmentService{repo, vesselClient}); err != nil {
 		log.Panic(err)
 	}
 
