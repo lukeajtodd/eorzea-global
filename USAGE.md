@@ -11,7 +11,7 @@ protoc --proto_path=. --go_out=. --micro_out=. \
 		<service-name>/proto/consignment/consignment.proto
 ```
 
-Alternatively we can run `./scripts/build-proto.sh aetheryte-service-consignment`.
+Alternatively we can run `./scripts/build-proto.sh aetheryte-service-consignment consignment`.
 
 ## Docker
 
