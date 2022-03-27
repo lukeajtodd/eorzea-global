@@ -1,6 +1,47 @@
+# version: '3.5'
+
+# services:
+#   consignment:
+#     restart: always
+#     build: ./aetheryte-service-consignment
+#     depends_on:
+#       - datastore
+#       - vessel
+#     ports:
+#       - "50051:50051"
+#     environment:
+#       MICRO_SERVER_ADDRESS: "50051"
+#       DB_HOST: "mongodv://datastore:27017"
+  
+#   vessel:
+#     restart: always
+#     build: ./aetheryte-service-vessel
+#     ports:
+#       - "50052:50051"
+#     environment:
+#       MICRO_SERVER_ADDRESS: "50051"
+#       DB_HOST: "mongodb://datastore:27017"
+  
+#   cli:
+#     build: ./aetheryte-cli-consignment
+
+#   datastore:
+#     image: mongo
+#     container_name: datastore
+#     environment:
+#       - MONOGO_DATA_DIR=/data/db
+#       - MONGO_LOG_DIR=/dev/null
+#     volumes:
+#       - ./data/db:/data/db
+#     ports:
+#       - 27017
+#     command: mongod --logpath=/dev/null
+
 version: '3.5'
 
 services:
+
+  # Services
   consignment:
     restart: always
     build: ./aetheryte-service-consignment
@@ -8,31 +49,33 @@ services:
       - datastore
       - vessel
     ports:
-      - "50051:50051"
+      - 50051:50051
     environment:
-      MICRO_SERVER_ADDRESS: "50051"
-      DB_HOST: "mongodv://datastore:27017"
-  
+      MICRO_SERVER_ADDRESS: ":50051"
+      DB_HOST: "mongodb://datastore:27017"
+
   vessel:
     restart: always
     build: ./aetheryte-service-vessel
     ports:
-      - "50052:50051"
+      - 50052:50051
     environment:
-      MICRO_SERVER_ADDRESS: "50051"
-      DB_HOST: "mongodv://datastore:27017"
-  
+      MICRO_SERVER_ADDRESS: ":50051"
+      DB_HOST: "mongodb://datastore:27017"
+
+  # Commands
   cli:
     build: ./aetheryte-cli-consignment
 
+  # Database tier
   datastore:
     image: mongo
-    container_name: datastore
+    container_name: "datastore"
     environment:
-      - MONOGO_DATA_DIR=/data/db
+      - MONGO_DATA_DIR=/data/db
       - MONGO_LOG_DIR=/dev/null
     volumes:
-      - ./data/db:/data/db
+      - ./data/db:/data/db # ensures data persistence between restarting
     ports:
       - 27017
     command: mongod --logpath=/dev/null
