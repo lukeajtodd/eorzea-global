@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	github.com/golang/protobuf v1.5.2
-	github.com/lukeajtodd/eorzea-global/aetheryte-service-vessel v0.1.0
+	github.com/lukeajtodd/eorzea-global/aetheryte-service-vessel v0.2.0
 	go-micro.dev/v4 v4.6.0
 	go.mongodb.org/mongo-driver v1.8.4
 	google.golang.org/protobuf v1.27.1
