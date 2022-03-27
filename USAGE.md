@@ -18,15 +18,19 @@ Alternatively we can run `./scripts/build-proto.sh aetheryte-service-consignment
 ### Building
 
 ```bash
-docker build -t <service-name> .
+docker-compose build
 ```
-
-Alternatively we can run `./scripts/build.sh aetheryte-service-consignment`.
 
 ### Running
 
 ```bash
-docker run <service-name>
+docker-compose up
 ```
 
-Alternatively we can run `./scripts/run.sh aetheryte-cli-consignment`.
+```bash
+docker-compose up -d
+```
+
+```bash
+docker-compose run <service>
+```
